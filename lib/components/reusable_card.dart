@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class ReusableCard extends StatelessWidget {
   ReusableCard({this.colour, this.cardWidget, this.onPress});
   final Color? colour;

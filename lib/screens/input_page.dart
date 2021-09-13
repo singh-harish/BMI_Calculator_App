@@ -1,10 +1,11 @@
-import 'package:bmi_calc/result_page.dart';
+import 'package:bmi_calc/components/bmi_brain.dart';
+import 'package:bmi_calc/screens/result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'icon_content.dart';
-import 'reusable_card.dart';
-import 'constant.dart';
-import 'bottom_button.dart';
+import '../components/icon_content.dart';
+import '../components/reusable_card.dart';
+import '../components/constant.dart';
+import '../components/bmi_brain.dart';
 
 enum Gender { male, female }
 
@@ -244,10 +245,15 @@ class _InputPageState extends State<InputPage> {
 
             GestureDetector(
               onTap: () {
+                BMIBrain brain = BMIBrain(weight: weight,height: height);
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ResultPage(),
+                    builder: (context) => ResultPage(
+                      bmiAnswer: brain.getBMI(),
+                      bmiText: brain.getResult(),
+                      bmiInterpretation: brain.getInterpretation(),
+                    ),
                   ),
                 );
               },

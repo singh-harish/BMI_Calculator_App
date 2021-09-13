@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
-
 const kbottomContainerHeight = 50.0;
 const kactivecardColor = Color(0xFF1D1E33);
 const kinactiveCardColor = Color(0xFF111328);
-
 
 const klabelTextStyle = TextStyle(
   fontSize: 20,
