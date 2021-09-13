@@ -1,8 +1,10 @@
+import 'package:bmi_calc/result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_content.dart';
 import 'reusable_card.dart';
 import 'constant.dart';
+import 'bottom_button.dart';
 
 enum Gender { male, female }
 
@@ -143,23 +145,31 @@ class _InputPageState extends State<InputPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               FloatingActionButton(
-                                onPressed: (){
+                                heroTag: "button1",
+                                onPressed: () {
                                   setState(() {
-                                    weight-=1;
+                                    weight -= 1;
                                   });
                                 },
                                 backgroundColor: Color(0xFF4C4F5E),
-                                child: Icon(FontAwesomeIcons.minus, color: Colors.white,),
+                                child: Icon(
+                                  FontAwesomeIcons.minus,
+                                  color: Colors.white,
+                                ),
                               ),
                               SizedBox(width: 30),
                               FloatingActionButton(
-                                onPressed: (){
+                                heroTag: "button2",
+                                onPressed: () {
                                   setState(() {
-                                    weight+=1;
+                                    weight += 1;
                                   });
                                 },
                                 backgroundColor: Color(0xFF4C4F5E),
-                                child: Icon(FontAwesomeIcons.plus, color: Colors.white,),
+                                child: Icon(
+                                  FontAwesomeIcons.plus,
+                                  color: Colors.white,
+                                ),
                               ),
                             ],
                           ),
@@ -185,23 +195,31 @@ class _InputPageState extends State<InputPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               FloatingActionButton(
-                                onPressed: (){
+                                heroTag: "button3",
+                                onPressed: () {
                                   setState(() {
-                                    age-=1;
+                                    age -= 1;
                                   });
                                 },
                                 backgroundColor: Color(0xFF4C4F5E),
-                                child: Icon(FontAwesomeIcons.minus, color: Colors.white,),
+                                child: Icon(
+                                  FontAwesomeIcons.minus,
+                                  color: Colors.white,
+                                ),
                               ),
                               SizedBox(width: 30),
                               FloatingActionButton(
-                                onPressed: (){
+                                heroTag: "button4",
+                                onPressed: () {
                                   setState(() {
-                                    age+=1;
+                                    age += 1;
                                   });
                                 },
                                 backgroundColor: Color(0xFF4C4F5E),
-                                child: Icon(FontAwesomeIcons.plus, color: Colors.white,),
+                                child: Icon(
+                                  FontAwesomeIcons.plus,
+                                  color: Colors.white,
+                                ),
                               ),
                             ],
                           ),
@@ -212,11 +230,40 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            Container(
-              color: Color(0xFFEB1555),
-              margin: EdgeInsets.only(top: 10),
-              width: double.infinity,
-              height: kbottomContainerHeight,
+            // BottomButton(
+            //   buttonText: "CALCULATE",
+            //   onTap: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) => ResultPage(),
+            //       ),
+            //     );
+            //   },
+            // ),
+
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ResultPage(),
+                  ),
+                );
+              },
+              child: Container(
+                child: Center(
+                  child: Text(
+                    "CALCULATE",
+                    style: kLargeButtonTextStyle,
+                  ),
+                ),
+                color: Color(0xFFEB1555),
+                margin: EdgeInsets.only(top: 10),
+                padding: EdgeInsets.only(bottom: 10),
+                width: double.infinity,
+                height: kbottomContainerHeight,
+              ),
             ),
           ],
         ),

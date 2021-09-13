@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 
 const kbottomContainerHeight = 50.0;
@@ -14,4 +15,20 @@ const klabelTextStyle = TextStyle(
 const knumberTextStyle = TextStyle(
   fontSize: 50,
   fontWeight: FontWeight.w900,
+);
+
+const kLargeButtonTextStyle= TextStyle(
+  fontSize: 25,
+  fontWeight: FontWeight.bold,
+);
+
+const kResultTextStyle = TextStyle(
+  fontSize: 20,
+  fontWeight: FontWeight.bold,
+  color: Color(0xFF24D876)
+);
+
+const kResultlabelTextStyle = TextStyle(
+  fontSize: 70,
+  fontWeight: FontWeight.bold,
 );
